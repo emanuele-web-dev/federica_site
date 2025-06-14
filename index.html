@@ -131,36 +131,39 @@
     </div>
 
     <!-- Navbar -->
-    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-40 shadow-sm">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <a href="#" class="flex items-center group">
-                    <img src="assets/logo.png" alt="Federica Nicosia Logo" class="h-16 group-hover:scale-110 transition-transform duration-300">
-                    <span class="ml-3 font-serif text-xl font-bold hidden md:block">Federica Nicosia</span>
-                </a>
-                <div class="hidden md:flex space-x-2">
-                    <a href="#about" class="nav-link">Chi sono</a>
-                    <a href="#services" class="nav-link">Pacchetti</a>
-                    <a href="#portfolio" class="nav-link">Portfolio</a>
-                    <a href="#testimonials" class="nav-link">Recensioni</a>
-                    <a href="#contact" class="nav-link bg-primary text-white hover:bg-secondary">Contatti</a>
-                </div>
-                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
-                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
+<nav class="fixed w-full bg-white/90 backdrop-blur-md z-40 shadow-sm">
+    <div class="container mx-auto px-4 py-3">
+        <div class="flex justify-between items-center">
+            <a href="#" class="flex items-center group">
+                <img src="assets/logo.png" alt="Federica Nicosia Logo" class="h-12 group-hover:scale-110 transition-transform duration-300">
+                <span class="ml-3 font-serif text-xl font-bold hidden md:block">Federica Nicosia</span>
+            </a>
+            
+            <div class="hidden md:flex space-x-2">
+                <a href="#about" class="nav-link">Chi sono</a>
+                <a href="#services" class="nav-link">Pacchetti</a>
+                <a href="#portfolio" class="nav-link">Portfolio</a>
+                <a href="#testimonials" class="nav-link">Recensioni</a>
+                <a href="#contact" class="nav-link bg-primary text-white hover:bg-secondary">Contatti</a>
             </div>
-            <!-- Mobile menu -->
-            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-4">
-                <a href="#about" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Chi sono</a>
-                <a href="#services" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Pacchetti</a>
-                <a href="#portfolio" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Portfolio</a>
-                <a href="#testimonials" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Recensioni</a>
-                <a href="#contact" class="block px-4 py-3 rounded-lg bg-primary text-white font-medium">Contatti</a>
-            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden focus:outline-none p-1">
+                <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
         </div>
-    </nav>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden mt-2 space-y-1 pb-2">
+            <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Chi sono</a>
+            <a href="#services" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Pacchetti</a>
+            <a href="#portfolio" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Portfolio</a>
+            <a href="#testimonials" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Recensioni</a>
+            <a href="#contact" class="block px-3 py-2 rounded-lg bg-primary text-white font-medium text-sm">Contatti</a>
+        </div>
+    </div>
+</nav>
 
     <!-- Hero Section -->
     <section class="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-accent/30 via-light to-accent/30 relative overflow-hidden">
