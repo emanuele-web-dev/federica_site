@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federica Nicosia | Social Media Strategist Beauty</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B9D',
+                        secondary: '#9D7AFF',
+                        dark: '#2A2A3C',
+                        light: '#FDF5FF',
+                        accent: '#FFD1E4',
+                        success: '#7AD6A0',
+                        cream: '#FFF5F9',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        script: ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        '3d': '8px 8px 0px 0px rgba(0,0,0,0.1)',
+                        '3d-hover': '12px 12px 0px 0px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn {
+                @apply px-8 py-4 rounded-full font-semibold transition-all duration-500 ease-out;
+            }
+            .btn-primary {
+                @apply bg-gradient-to-r from-primary to-secondary text-white hover:shadow-3d-hover hover:scale-105 shadow-3d;
+            }
+            .btn-secondary {
+                @apply bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white hover:border-transparent;
+            }
+            .section-header h2 {
+                @apply text-4xl md:text-5xl font-serif font-bold text-dark mb-6 text-center;
+            }
+            .divider {
+                @apply w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-16 rounded-full;
+            }
+            .service-card {
+                @apply bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent;
+            }
+            .card-header {
+                @apply bg-gradient-to-r from-primary to-secondary text-white p-8 relative overflow-hidden;
+            }
+            .card-header h3 {
+                @apply text-2xl font-bold text-center relative z-10;
+            }
+            .card-body {
+                @apply p-8 text-dark;
+            }
+            .nav-link {
+                @apply px-6 py-3 rounded-full hover:bg-accent transition-all duration-300 font-medium;
+            }
+            .floating {
+                animation: floating 6s ease-in-out infinite;
+            }
+            .floating-delay {
+                animation: floating 6s ease-in-out 1s infinite;
+            }
+            .blob {
+                @apply absolute rounded-full opacity-20 blur-xl;
+            }
+            @keyframes floating {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+        }
+    </style>
+</head>
+<body class="bg-light font-sans text-dark overflow-x-hidden">
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-white z-50 flex items-center justify-center">
+        <div class="animate-pulse flex space-x-4">
+            <div class="h-12 w-12 bg-primary rounded-full"></div>
+            <div class="h-12 w-12 bg-secondary rounded-full"></div>
+            <div class="h-12 w-12 bg-accent rounded-full"></div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full bg-white/90 backdrop-blur-md z-40 shadow-sm">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="flex items-center group">
+                    <img src="assets/logo.png" alt="Federica Nicosia Logo" class="h-14 group-hover:scale-110 transition-transform duration-300">
+                    <span class="ml-3 font-serif text-xl font-bold hidden md:block">Federica Nicosia</span>
+                </a>
+                <div class="hidden md:flex space-x-2">
+                    <a href="#about" class="nav-link">Chi sono</a>
+                    <a href="#services" class="nav-link">Pacchetti</a>
+                    <a href="#portfolio" class="nav-link">Portfolio</a>
+                    <a href="#testimonials" class="nav-link">Recensioni</a>
+                    <a href="#contact" class="nav-link bg-primary text-white hover:bg-secondary">Contatti</a>
+                </div>
+                <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2 pb-4">
+                <a href="#about" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Chi sono</a>
+                <a href="#services" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Pacchetti</a>
+                <a href="#portfolio" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Portfolio</a>
+                <a href="#testimonials" class="block px-4 py-3 rounded-lg hover:bg-accent font-medium">Recensioni</a>
+                <a href="#contact" class="block px-4 py-3 rounded-lg bg-primary text-white font-medium">Contatti</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-40 pb-24 md:pt-48 md:pb-32 bg-gradient-to-br from-accent/30 via-light to-accent/30 relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="blob w-64 h-64 bg-primary -left-32 -top-32"></div>
+        <div class="blob w-96 h-96 bg-secondary -right-48 top-1/4"></div>
+        
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-dark mb-6 animate__animated animate__fadeInDown">FEDERICA NICOSIA</h1>
+            <h2 class="text-2xl md:text-3xl font-medium text-secondary mb-8 animate__animated animate__fadeIn animate__delay-1s">
+                <span class="inline-block floating">Social Media Manager</span> 
+                <span class="mx-4">•</span> 
+                <span class="inline-block floating-delay">Beauty Strategist</span>
+            </h2>
+            <p class="text-xl md:text-2xl mb-12 max-w-2xl mx-auto animate__animated animate__fadeIn animate__delay-1s">
+                Trasformo la tua presenza digitale in un'<span class="font-semibold text-primary">esperienza memorabile</span> che attira clienti e costruisce fedeltà
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6 animate__animated animate__fadeInUp animate__delay-1s">
+                <a href="#services" class="btn btn-primary">
+                    <span class="mr-2">Scopri i pacchetti</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <span class="mr-2">Prenota consulenza</span>
+                    <i class="fas fa-calendar-alt"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- About Section - Centered Version -->
+<section id="about" class="py-16 md:py-24 bg-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Header Centered -->
+        <div class="text-center max-w-4xl mx-auto mb-12">
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-serif font-bold text-dark mb-4">
+                Chi sono
+            </h2>
+            <div class="divider mx-auto"></div>
+        </div>
+
+        <!-- Content Box with subtle shadow -->
+        <div class="bg-light/50 rounded-2xl p-8 md:p-12 shadow-sm border border-gray-100 max-w-4xl mx-auto">
+            <!-- Introduction Text -->
+            <div class="text-center mb-10">
+                <p class="text-lg md:text-xl mb-6 leading-relaxed text-gray-700">
+                    Ciao, sono <span class="font-bold text-primary">Federica Nicosia</span>, Social Media Manager specializzata nel settore Beauty con una passione per la creazione di strategie digitali che <span class="font-bold text-dark">convertono seguaci in clienti fedeli</span>.
+                </p>
+                <p class="text-lg md:text-xl mb-8 leading-relaxed text-gray-700">
+                    Il mio approccio combina creatività visiva, analisi dati e una profonda comprensione del mercato beauty per costruire <span class="font-bold text-dark">presenze digitali autentiche</span> che risuonano con il tuo pubblico ideale.
+                </p>
+            </div>
+
+            <!-- Mission & Vision Cards - Side by Side -->
+            <div class="grid md:grid-cols-2 gap-6 mb-10">
+                <!-- Mission Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-primary transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-primary/10 text-primary p-3 rounded-full mb-4">
+                            <i class="fas fa-bullseye text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-dark mb-4">MISSION</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1"><i class="fas fa-check"></i></span>
+                                <span class="text-gray-700 text-left">Trasformare i social in generatori di clienti</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-2 mt-1"><i class="fas fa-check"></i></span>
+                                <span class="text-gray-700 text-left">Creare contenuti strategici coinvolgenti</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Vision Card -->
+                <div class="bg-white p-6 rounded-xl shadow-md border-t-4 border-secondary transform hover:-translate-y-1 transition-transform duration-300">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="bg-secondary/10 text-secondary p-3 rounded-full mb-4">
+                            <i class="fas fa-eye text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-serif font-bold text-dark mb-4">VISION</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start">
+                                <span class="text-secondary mr-2 mt-1"><i class="fas fa-star"></i></span>
+                                <span class="text-gray-700 text-left">Rivoluzionare il digitale nel beauty</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-secondary mr-2 mt-1"><i class="fas fa-star"></i></span>
+                                <span class="text-gray-700 text-left">Standard di qualità e autenticità</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experience Badge -->
+            <div class="bg-primary/10 border border-primary/20 rounded-full py-3 px-6 inline-flex items-center mx-auto mb-10">
+                <div class="bg-primary text-white rounded-full w-10 h-10 flex items-center justify-center mr-3">
+                    <i class="fas fa-award"></i>
+                </div>
+                <span class="font-bold text-dark">5+ anni di esperienza</span> nel settore beauty
+            </div>
+
+            <!-- CTA Buttons Centered -->
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="btn btn-primary flex items-center justify-center">
+                    <span class="mr-2">Scopri i servizi</span>
+                    <i class="fas fa-arrow-down"></i>
+                </a>
+                <a href="#contact" class="btn btn-secondary flex items-center justify-center">
+                    <span class="mr-2">Contattami</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Stats Section -->
+    <section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 text-center">
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2" data-count="150">0</div>
+                    <div class="text-lg">Clienti soddisfatti</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2" data-count="500">0</div>
+                    <div class="text-lg">Progetti completati</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2" data-count="300">0</div>
+                    <div class="text-lg">K followers generati</div>
+                </div>
+                <div class="p-6">
+                    <div class="text-4xl font-bold mb-2" data-count="100">0</div>
+                    <div class="text-lg">% Impegno</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2>Pacchetti Personalizzati</h2>
+                <div class="divider"></div>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+                    Soluzioni su misura per ogni esigenza, dal lancio alla leadership nel settore beauty
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-3 gap-10">
+                <!-- Package 1 -->
+                <div class="service-card group transform hover:-translate-y-4">
+                    <div class="card-header">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-500"></div>
+                        <h3>Glow Up</h3>
+                        <div class="text-center mt-4 text-white/90">
+                            <span class="text-3xl font-bold">€790</span>
+                            <span class="text-lg">/mese</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-6 italic text-gray-600">
+                            "Il pacchetto perfetto per chi vuole una presenza digitale coerente e professionale"
+                        </p>
+                        <h4 class="font-bold mb-4 text-primary">Cosa include:</h4>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Strategia e calendario editoriale personalizzato</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Ottimizzazione completa del profilo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>12 post/mese (feed e stories)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Analisi mensile + report performance</span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="#contact" class="btn btn-secondary w-full">Richiedi info</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 2 (Featured) -->
+                <div class="service-card group transform hover:-translate-y-4 relative">
+                    <div class="absolute -top-4 right-6 bg-success text-white px-4 py-1 rounded-full font-bold text-sm z-20 shadow-md">
+                        POPOLARE
+                    </div>
+                    <div class="card-header">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-500"></div>
+                        <h3>Iconic Presence</h3>
+                        <div class="text-center mt-4 text-white/90">
+                            <span class="text-3xl font-bold">€1.490</span>
+                            <span class="text-lg">/mese</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-6 italic text-gray-600">
+                            "Per chi vuole distinguersi con un'identità visiva forte e contenuti premium"
+                        </p>
+                        <h4 class="font-bold mb-4 text-primary">Cosa include:</h4>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Tutto il pacchetto Glow Up +</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Shooting professionale 1x/mese</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>18 post/mese (feed, stories, reels)</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Copywriting persuasivo</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Analisi competitor</span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="#contact" class="btn btn-primary w-full">Prenota ora</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 3 -->
+                <div class="service-card group transform hover:-translate-y-4">
+                    <div class="card-header">
+                        <div class="absolute inset-0 bg-white/10 group-hover:bg-white/20 transition-all duration-500"></div>
+                        <h3>Beauty Authority</h3>
+                        <div class="text-center mt-4 text-white/90">
+                            <span class="text-3xl font-bold">€2.990</span>
+                            <span class="text-lg">/mese</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="mb-6 italic text-gray-600">
+                            "La soluzione completa per posizionarti come leader nel tuo mercato"
+                        </p>
+                        <h4 class="font-bold mb-4 text-primary">Cosa include:</h4>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Tutto il pacchetto Iconic +</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Shooting 2-3x/mese in sede</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Piano strategico trimestrale</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>25+ contenuti/mese</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Sessioni di coaching mensili</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-primary mr-3 mt-1"><i class="fas fa-check"></i></span>
+                                <span>Supporto creativo premium</span>
+                            </li>
+                        </ul>
+                        <div class="text-center">
+                            <a href="#contact" class="btn btn-secondary w-full">Richiedi info</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 bg-white rounded-2xl p-8 md:p-12 shadow-lg border border-gray-100">
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="md:w-1/3 text-center">
+                        <div class="inline-flex items-center justify-center w-24 h-24 bg-primary/10 rounded-full text-primary text-4xl mb-4">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 class="text-2xl font-serif font-bold mb-4">Non trovi quello che cerchi?</h3>
+                        <p class="text-gray-600">Ogni business è unico, creiamo una soluzione personalizzata per te</p>
+                    </div>
+                    <div class="md:w-2/3">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="text-secondary text-2xl mt-1">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Pacchetto Custom</h4>
+                                    <p class="text-gray-600">Servizi su misura in base alle tue esigenze specifiche e budget</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-secondary text-2xl mt-1">
+                                    <i class="fas fa-rocket"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Lancio Prodotto</h4>
+                                    <p class="text-gray-600">Strategia integrata per il lancio di nuovi servizi o prodotti</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-secondary text-2xl mt-1">
+                                    <i class="fas fa-ad"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Gestione ADV</h4>
+                                    <p class="text-gray-600">Campagne pubblicitarie performanti su Meta e TikTok</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="text-secondary text-2xl mt-1">
+                                    <i class="fas fa-camera-retro"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-2">Content Production</h4>
+                                    <p class="text-gray-600">Servizi fotografici e video professionali per i tuoi social</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <a href="#contact" class="btn btn-primary inline-flex items-center">
+                                <span class="mr-2">Parla con me</span>
+                                <i class="fas fa-comments"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2>Il Mio Metodo</h2>
+                <div class="divider"></div>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+                    Un approccio strutturato per risultati misurabili e duraturi
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Timeline -->
+                <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary -ml-0.5 z-0"></div>
+                
+                <!-- Steps -->
+                <div class="space-y-16 md:space-y-24 relative z-10">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-1">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
+                                1
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Analisi Strategica</h3>
+                            <p class="text-gray-600">
+                                Studio approfondito del tuo brand, competitor e pubblico target per definire la strategia vincente.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-2 md:order-2">
+                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
+                                <img src="https://via.placeholder.com/500x300?text=Analisi+Strategica" alt="Analisi" class="rounded-lg w-full">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-3">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
+                                3
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Implementazione</h3>
+                            <p class="text-gray-600">
+                                Creazione e pubblicazione dei contenuti con tono di voce coerente e visual accattivanti.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-2 md:order-4">
+                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
+                                <img src="https://via.placeholder.com/500x300?text=Implementazione" alt="Implementazione" class="rounded-lg w-full">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-1">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
+                                2
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Pianificazione</h3>
+                            <p class="text-gray-600">
+                                Sviluppo del calendario editoriale e definizione degli obiettivi misurabili.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-2 md:order-2">
+                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
+                                <img src="https://via.placeholder.com/500x300?text=Pianificazione" alt="Pianificazione" class="rounded-lg w-full">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row items-center gap-8 group">
+                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-3">
+                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
+                                4
+                            </div>
+                            <h3 class="text-2xl font-serif font-bold mb-4">Ottimizzazione</h3>
+                            <p class="text-gray-600">
+                                Monitoraggio costante e miglioramento continuo basato sui dati e performance.
+                            </p>
+                        </div>
+                        <div class="md:w-1/2 md:pl-16 order-2 md:order-4">
+                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
+                                <img src="https://via.placeholder.com/500x300?text=Ottimizzazione" alt="Ottimizzazione" class="rounded-lg w-full">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-24 bg-light">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2>Portfolio</h2>
+                <div class="divider"></div>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+                    Alcuni dei progetti che hanno trasformato la presenza digitale dei miei clienti
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://via.placeholder.com/600x800?text=Beauty+Salon" alt="Project 1" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Glamour Hair Studio</h3>
+                        <p class="text-white/80 mb-4">+120% clienti in 6 mesi</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Instagram</span>
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Content Strategy</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://via.placeholder.com/600x800?text=Skin+Clinic" alt="Project 2" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Pure Skin Clinic</h3>
+                        <p class="text-white/80 mb-4">+300% engagement in 3 mesi</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Instagram</span>
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Brand Identity</span>
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">ADV</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
+                    <img src="https://via.placeholder.com/600x800?text=Nail+Design" alt="Project 3" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Luxe Nails</h3>
+                        <p class="text-white/80 mb-4">Prenotazioni al 100% capacity</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">TikTok</span>
+                            <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Viral Content</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#contact" class="btn btn-primary inline-flex items-center">
+                    <span class="mr-2">Vuoi questi risultati?</span>
+                    <i class="fas fa-paper-plane"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="section-header">
+                <h2>Cosa Dicono di Me</h2>
+                <div class="divider"></div>
+                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+                    Le esperienze dei professionisti beauty che hanno scelto la mia consulenza
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-primary">
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/80?text=CM" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-primary">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Chiara Monti</h4>
+                            <p class="text-gray-600">Proprietaria - Hair Boutique</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-700 mb-6">
+                        <i class="fas fa-quote-left text-primary/30 text-2xl float-left mr-2"></i>
+                        Federica ha trasformato il nostro Instagram da pagina amatoriale a vero biglietto da visita. In 4 mesi abbiamo raddoppiato le prenotazioni online!
+                    </div>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-secondary">
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/80?text=MB" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-secondary">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Marco Bianchi</h4>
+                            <p class="text-gray-600">Barbiere - The Gentleman's Cut</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-700 mb-6">
+                        <i class="fas fa-quote-left text-secondary/30 text-2xl float-left mr-2"></i>
+                        Lavorare con Federica è stato illuminante. Ha capito subito il nostro target e creato contenuti che parlano direttamente ai nostri clienti ideali.
+                    </div>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-success">
+                    <div class="flex items-center mb-6">
+                        <img src="https://via.placeholder.com/80?text=SR" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-success">
+                        <div class="ml-4">
+                            <h4 class="font-bold text-lg">Sara Ricci</h4>
+                            <p class="text-gray-600">Estetista - Glow Skin Care</p>
+                        </div>
+                    </div>
+                    <div class="text-gray-700 mb-6">
+                        <i class="fas fa-quote-left text-success/30 text-2xl float-left mr-2"></i>
+                        Finalmente qualcuno che conosce davvero il mondo beauty! I suoi reel hanno portato tantissime nuove clienti nel mio centro.
+                    </div>
+                    <div class="flex text-yellow-400">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-8">Pronto a trasformare la tua presenza digitale?</h2>
+            <p class="text-xl mb-12 max-w-3xl mx-auto">
+                Prenota una consulenza gratuita per analizzare la tua situazione attuale e scoprire come posso aiutarti
+            </p>
+            <a href="#contact" class="btn btn-secondary inline-flex items-center">
+                <span class="mr-2">Prenota ora</span>
+                <i class="fas fa-calendar-check"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-16">
+                <div class="lg:w-1/2">
+                    <div class="section-header text-left">
+                        <h2>Contattami</h2>
+                        <div class="divider ml-0"></div>
+                    </div>
+                    <p class="text-lg mb-8">
+                        Hai domande sui miei servizi o vuoi discutere del tuo progetto? Scrivimi e ti risponderò al più presto!
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-6">
+                            <div class="bg-primary/10 text-primary p-4 rounded-full">
+                                <i class="fas fa-envelope text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-serif font-bold mb-2">Email</h3>
+                                <a href="mailto:federica@example.com" class="text-primary hover:text-secondary transition-colors text-lg">federica@example.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="bg-primary/10 text-primary p-4 rounded-full">
+                                <i class="fab fa-linkedin-in text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-serif font-bold mb-2">LinkedIn</h3>
+                                <a href="https://linkedin.com/in/federicanicosia" target="_blank" class="text-primary hover:text-secondary transition-colors text-lg">linkedin.com/in/federicanicosia</a>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-6">
+                            <div class="bg-primary/10 text-primary p-4 rounded-full">
+                                <i class="fab fa-instagram text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-serif font-bold mb-2">Instagram</h3>
+                                <a href="https://instagram.com/federicanicosia_smm" target="_blank" class="text-primary hover:text-secondary transition-colors text-lg">@federicanicosia_smm</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2">
+                    <div class="bg-light rounded-2xl p-8 shadow-lg border border-gray-100">
+                        <h3 class="text-2xl font-serif font-bold mb-6">Scrivimi un messaggio</h3>
+                        <form class="space-y-6">
+                            <div>
+                                <label for="name" class="block mb-2 font-medium">Nome</label>
+                                <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="email" class="block mb-2 font-medium">Email</label>
+                                <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                            </div>
+                            <div>
+                                <label for="service" class="block mb-2 font-medium">Servizio di interesse</label>
+                                <select id="service" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent">
+                                    <option value="">Seleziona un servizio</option>
+                                    <option value="glow-up">Glow Up</option>
+                                    <option value="iconic">Iconic Presence</option>
+                                    <option value="authority">Beauty Authority</option>
+                                    <option value="custom">Pacchetto Custom</option>
+                                    <option value="other">Altro</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2 font-medium">Messaggio</label>
+                                <textarea id="message" rows="5" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary w-full">
+                                <span class="mr-2">Invia messaggio</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-16">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-8 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/logo.png" alt="Federica Nicosia Logo" class="h-12">
+                        <span class="ml-3 font-serif text-xl font-bold">Federica Nicosia</span>
+                    </a>
+                    <p class="mt-4 text-gray-400 max-w-md">
+                        Social Media Manager specializzata nel settore beauty. Trasformo la tua presenza digitale in un'opportunità di business.
+                    </p>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-8">
+                    <div>
+                        <h3 class="font-serif font-bold text-lg mb-4">Navigazione</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#about" class="text-gray-400 hover:text-primary transition-colors">Chi sono</a></li>
+                            <li><a href="#services" class="text-gray-400 hover:text-primary transition-colors">Pacchetti</a></li>
+                            <li><a href="#portfolio" class="text-gray-400 hover:text-primary transition-colors">Portfolio</a></li>
+                            <li><a href="#contact" class="text-gray-400 hover:text-primary transition-colors">Contatti</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg mb-4">Servizi</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Social Media Strategy</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Content Creation</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Brand Identity</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-primary transition-colors">Advertising</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3 class="font-serif font-bold text-lg mb-4">Social</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-dark-light rounded-full flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-dark-light rounded-full flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-dark-light rounded-full flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-dark-light rounded-full flex items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/10 transition-colors">
+                                <i class="fab fa-pinterest-p"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2023 Federica Nicosia. Tutti i diritti riservati.</p>
+                <p class="mt-2">P.IVA 12345678901</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-30">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="script.js"></script>
+</body>
+</html>
