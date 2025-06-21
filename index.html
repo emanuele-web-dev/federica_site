@@ -51,118 +51,56 @@
     theme: {
       extend: {
         colors: {
-          ivory: {
-            light: '#FAF9F6',
-            DEFAULT: '#F3F0EB',
-            dark: '#E0DAD1',
+          blush: {
+            light: '#f7f3f2',
+            DEFAULT: '#ead8d3',
           },
-          charcoal: {
-            light: '#5B5B5B',
-            DEFAULT: '#2E2E2E',
-            dark: '#1A1A1A',
-          },
-          sand: {
-            light: '#EADDC8',
-            DEFAULT: '#D9C3A8',
-            dark: '#C2A985',
-          },
-          copper: '#B86F52',
-          rust: '#934B35',
-          olive: '#7B8D4C',
-          camel: '#BFA38A',
-          accent: '#D97706',
+          taupe: '#b6afa9',
+          lavender: '#c7b8c3',
+          rosewood: '#a9746e',
+          charcoal: '#3f3f3f',
         },
         fontFamily: {
           sans: ['Poppins', 'sans-serif'],
           serif: ['Playfair Display', 'serif'],
         },
         boxShadow: {
-          soft: '0 10px 30px -15px rgba(0,0,0,0.08)',
-          '3d': '6px 6px 0px 0px rgba(0,0,0,0.04)',
-          '3d-hover': '10px 10px 0px 0px rgba(0,0,0,0.06)'
-        }
-      }
-    }
-  }
+          soft: '0 8px 20px -8px rgba(0,0,0,0.08)',
+          card: '0 4px 16px rgba(0,0,0,0.06)',
+        },
+      },
+    },
+  };
 </script>
 
-<style type="text/tailwindcss">
-  @layer components {
-    body {
-      @apply bg-ivory-light text-charcoal-dark;
-    }
 
-    .btn {
-      @apply px-8 py-4 rounded-full font-medium tracking-wide transition-all duration-300 ease-out;
-    }
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          blush: {
+            light: '#f7f3f2',
+            DEFAULT: '#ead8d3',
+          },
+          taupe: '#b6afa9',
+          lavender: '#c7b8c3',
+          rosewood: '#a9746e',
+          charcoal: '#3f3f3f',
+        },
+        fontFamily: {
+          sans: ['Poppins', 'sans-serif'],
+          serif: ['Playfair Display', 'serif'],
+        },
+        boxShadow: {
+          soft: '0 8px 20px -8px rgba(0,0,0,0.08)',
+          card: '0 4px 16px rgba(0,0,0,0.06)',
+        },
+      },
+    },
+  };
+</script>
 
-    .btn-primary {
-      @apply bg-rust text-ivory-light hover:bg-copper hover:shadow-3d-hover hover:-translate-y-1 shadow-3d;
-    }
-
-    .btn-secondary {
-      @apply bg-transparent text-rust border-2 border-rust hover:bg-rust/10;
-    }
-
-    .section-header h2 {
-      @apply text-4xl md:text-5xl font-serif font-bold text-charcoal-dark mb-6 text-center;
-    }
-
-    .divider {
-      @apply w-24 h-1 bg-copper mx-auto mb-16;
-    }
-
-    .service-card {
-      @apply bg-ivory-light rounded-xl overflow-hidden shadow-soft hover:shadow-lg transition-all duration-300 border border-ivory-dark/30;
-    }
-
-    .card-header {
-      @apply bg-copper text-ivory-light p-8;
-    }
-
-    .card-header h3 {
-      @apply text-2xl font-serif font-bold text-center;
-    }
-
-    .card-body {
-      @apply p-8 text-charcoal-dark;
-    }
-
-    .nav-link {
-      @apply px-6 py-3 rounded-full hover:bg-ivory transition-colors duration-300 font-medium text-charcoal-dark;
-    }
-
-    .floating {
-      animation: floating 6s ease-in-out infinite;
-    }
-
-    .floating-delay {
-      animation: floating 6s ease-in-out 1s infinite;
-    }
-
-    .blob {
-      @apply absolute rounded-full opacity-10 blur-xl;
-    }
-
-    @keyframes floating {
-      0% { transform: translateY(0px); }
-      50% { transform: translateY(-15px); }
-      100% { transform: translateY(0px); }
-    }
-
-    a:not(.btn) {
-      @apply text-rust hover:text-copper transition-colors;
-    }
-
-    .bg-section {
-      @apply bg-ivory;
-    }
-
-    .bg-section-alt {
-      @apply bg-ivory-dark;
-    }
-  }
-</style>
    
 </head>
 <body class="bg-light font-sans text-dark overflow-x-hidden">
