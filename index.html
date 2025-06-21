@@ -74,32 +74,65 @@
 </script>
 
 
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          blush: {
-            light: '#f7f3f2',
-            DEFAULT: '#ead8d3',
-          },
-          taupe: '#b6afa9',
-          lavender: '#c7b8c3',
-          rosewood: '#a9746e',
-          charcoal: '#3f3f3f',
-        },
-        fontFamily: {
-          sans: ['Poppins', 'sans-serif'],
-          serif: ['Playfair Display', 'serif'],
-        },
-        boxShadow: {
-          soft: '0 8px 20px -8px rgba(0,0,0,0.08)',
-          card: '0 4px 16px rgba(0,0,0,0.06)',
-        },
-      },
-    },
-  };
-</script>
+<style type="text/tailwindcss">
+  @layer components {
+    body {
+      @apply bg-blush-light text-charcoal;
+    }
+
+    .btn {
+      @apply px-6 py-3 rounded-full font-medium transition-all duration-300 ease-out tracking-wide;
+    }
+
+    .btn-primary {
+      @apply bg-rosewood text-blush-light hover:bg-charcoal hover:text-white shadow-md;
+    }
+
+    .btn-secondary {
+      @apply bg-transparent border border-rosewood text-rosewood hover:bg-rosewood/10;
+    }
+
+    .section-header h2 {
+      @apply text-4xl md:text-5xl font-serif font-bold text-charcoal mb-4 text-center;
+    }
+
+    .divider {
+      @apply w-20 h-1 bg-rosewood mx-auto mb-12;
+    }
+
+    .service-card {
+      @apply bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 border border-taupe/20;
+    }
+
+    .card-header {
+      @apply bg-lavender text-charcoal p-6;
+    }
+
+    .card-header h3 {
+      @apply text-2xl font-serif font-semibold text-center;
+    }
+
+    .card-body {
+      @apply p-6 text-charcoal;
+    }
+
+    .nav-link {
+      @apply px-4 py-2 rounded-full hover:bg-blush transition-colors duration-300 font-medium text-charcoal;
+    }
+
+    a:not(.btn) {
+      @apply text-rosewood hover:text-charcoal transition-colors;
+    }
+
+    .bg-section {
+      @apply bg-blush;
+    }
+
+    .bg-section-alt {
+      @apply bg-lavender;
+    }
+  }
+</style>
 
    
 </head>
