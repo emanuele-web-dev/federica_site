@@ -45,96 +45,80 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        colors: {
-          blush: {
-            light: '#f7f3f2',
-            DEFAULT: '#ead8d3',
-          },
-          taupe: '#b6afa9',
-          lavender: '#c7b8c3',
-          rosewood: '#a9746e',
-          charcoal: '#3f3f3f',
-        },
-        fontFamily: {
-          sans: ['Poppins', 'sans-serif'],
-          serif: ['Playfair Display', 'serif'],
-        },
-        boxShadow: {
-          soft: '0 8px 20px -8px rgba(0,0,0,0.08)',
-          card: '0 4px 16px rgba(0,0,0,0.06)',
-        },
-      },
-    },
-  };
-</script>
-
-
-<style type="text/tailwindcss">
-  @layer components {
-    body {
-      @apply bg-blush-light text-charcoal;
-    }
-
-    .btn {
-      @apply px-6 py-3 rounded-full font-medium transition-all duration-300 ease-out tracking-wide;
-    }
-
-    .btn-primary {
-      @apply bg-rosewood text-blush-light hover:bg-charcoal hover:text-white shadow-md;
-    }
-
-    .btn-secondary {
-      @apply bg-transparent border border-rosewood text-rosewood hover:bg-rosewood/10;
-    }
-
-    .section-header h2 {
-      @apply text-4xl md:text-5xl font-serif font-bold text-charcoal mb-4 text-center;
-    }
-
-    .divider {
-      @apply w-20 h-1 bg-rosewood mx-auto mb-12;
-    }
-
-    .service-card {
-      @apply bg-white rounded-2xl overflow-hidden shadow-card hover:shadow-lg transition-all duration-300 border border-taupe/20;
-    }
-
-    .card-header {
-      @apply bg-lavender text-charcoal p-6;
-    }
-
-    .card-header h3 {
-      @apply text-2xl font-serif font-semibold text-center;
-    }
-
-    .card-body {
-      @apply p-6 text-charcoal;
-    }
-
-    .nav-link {
-      @apply px-4 py-2 rounded-full hover:bg-blush transition-colors duration-300 font-medium text-charcoal;
-    }
-
-    a:not(.btn) {
-      @apply text-rosewood hover:text-charcoal transition-colors;
-    }
-
-    .bg-section {
-      @apply bg-blush;
-    }
-
-    .bg-section-alt {
-      @apply bg-lavender;
-    }
-  }
-</style>
-
-   
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#FF6B9D',
+                        secondary: '#9D7AFF',
+                        dark: '#2A2A3C',
+                        light: '#FDF5FF',
+                        accent: '#FFD1E4',
+                        success: '#7AD6A0',
+                        cream: '#FFF5F9',
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                        script: ['Dancing Script', 'cursive'],
+                    },
+                    boxShadow: {
+                        '3d': '8px 8px 0px 0px rgba(0,0,0,0.1)',
+                        '3d-hover': '12px 12px 0px 0px rgba(0,0,0,0.1)',
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer components {
+            .btn {
+                @apply px-8 py-4 rounded-full font-semibold transition-all duration-500 ease-out;
+            }
+            .btn-primary {
+                @apply bg-gradient-to-r from-primary to-secondary text-white hover:shadow-3d-hover hover:scale-105 shadow-3d;
+            }
+            .btn-secondary {
+                @apply bg-white text-primary border-2 border-primary hover:bg-primary hover:text-white hover:border-transparent;
+            }
+            .section-header h2 {
+                @apply text-4xl md:text-5xl font-serif font-bold text-dark mb-6 text-center;
+            }
+            .divider {
+                @apply w-24 h-1.5 bg-gradient-to-r from-primary to-secondary mx-auto mb-16 rounded-full;
+            }
+            .service-card {
+                @apply bg-white rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent;
+            }
+            .card-header {
+                @apply bg-gradient-to-r from-primary to-secondary text-white p-8 relative overflow-hidden;
+            }
+            .card-header h3 {
+                @apply text-2xl font-bold text-center relative z-10;
+            }
+            .card-body {
+                @apply p-8 text-dark;
+            }
+            .nav-link {
+                @apply px-6 py-3 rounded-full hover:bg-accent transition-all duration-300 font-medium;
+            }
+            .floating {
+                animation: floating 6s ease-in-out infinite;
+            }
+            .floating-delay {
+                animation: floating 6s ease-in-out 1s infinite;
+            }
+            .blob {
+                @apply absolute rounded-full opacity-20 blur-xl;
+            }
+            @keyframes floating {
+                0% { transform: translateY(0px); }
+                50% { transform: translateY(-15px); }
+                100% { transform: translateY(0px); }
+            }
+        }
+    </style>
 </head>
 <body class="bg-light font-sans text-dark overflow-x-hidden">
     <!-- Preloader -->
