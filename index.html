@@ -45,16 +45,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <script src="https://unpkg.com/scrollreveal"></script>
-    <script>
+   <script>
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          primary: '#333446',
-          accent: '#7FCAA',
-          light: '#B8CFCE',
-          soft: '#EAEFEF',
-          dark: '#1B1B1B',
+          primary: '#123458',
+          accent: '#D4C9BE',
+          light: '#F1EFEC',
+          dark: '#030303',
         },
         fontFamily: {
           sans: ['Montserrat', 'sans-serif'],
@@ -62,7 +61,7 @@
           script: ['Dancing Script', 'cursive'],
         },
         boxShadow: {
-          '3d': '8px 8px 0px 0px rgba(0,0,0,0.08)',
+          '3d': '8px 8px 0px 0px rgba(0,0,0,0.1)',
           '3d-hover': '12px 12px 0px 0px rgba(0,0,0,0.1)',
         }
       }
@@ -88,7 +87,7 @@
       @apply w-24 h-1.5 bg-accent mx-auto mb-16 rounded-full;
     }
     .service-card {
-      @apply bg-soft rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-accent/30;
+      @apply bg-light rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border border-accent/30;
     }
     .card-header {
       @apply bg-primary text-white p-8;
@@ -107,6 +106,7 @@
     }
   }
 </style>
+
 
 </head>
 <body class="bg-light font-sans text-dark overflow-x-hidden">
