@@ -106,4 +106,12 @@ const observer = new IntersectionObserver((entries) => {
 const statsSection = document.querySelector('section.bg-gradient-to-r');
 if (statsSection) {
     observer.observe(statsSection);
-}
+} 
+
+document.getElementById('back-to-top').addEventListener('click', function (e) {
+    e.preventDefault();
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
