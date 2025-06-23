@@ -31,9 +31,8 @@
   <meta name="twitter:description" content="Specializzata nel settore Beauty, aiuto brand e professionisti a crescere online con strategie social su misura." />
   <meta name="twitter:image" content="https://federicanicosia.com/assets/card_whats.png" />
 
-
+  
   <!-- Favicon -->
-  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
 
   <link rel="icon" href="https://federicanicosia.com/favicon.ico" type="image/x-icon">
 
@@ -52,23 +51,26 @@
             theme: {
                 extend: {
                     colors: {
-                        primary: '#FF6B9D',
-                        secondary: '#9D7AFF',
-                        dark: '#2A2A3C',
-                        light: '#FDF5FF',
-                        accent: '#FFD1E4',
-                        success: '#7AD6A0',
-                        cream: '#FFF5F9',
-                    },
+  primary: '#C04C6B',     
+  secondary: '#6B2E46',   
+  dark: '#2A1A1F',        
+  light: '#FAF4F2',      
+  accent: '#E3A1B2',     
+  success: '#936D77',     
+  cream: '#F7E5E1',      
+},
+boxShadow: {
+  '3d': '8px 8px 0px 0px rgba(192, 76, 107, 0.15)',
+  '3d-hover': '12px 12px 0px 0px rgba(107, 46, 70, 0.2)',
+}
+
+,
                     fontFamily: {
                         sans: ['Montserrat', 'sans-serif'],
                         serif: ['Playfair Display', 'serif'],
                         script: ['Dancing Script', 'cursive'],
                     },
-                    boxShadow: {
-                        '3d': '8px 8px 0px 0px rgba(0,0,0,0.1)',
-                        '3d-hover': '12px 12px 0px 0px rgba(0,0,0,0.1)',
-                    }
+                    
                 }
             }
         }
@@ -133,19 +135,18 @@
     </div>
 
     <!-- Navbar -->
-<nav class="fixed w-full bg-white/90 backdrop-blur-md z-40 shadow-sm">
+<nav id="navbar" class="fixed w-full bg-white backdrop-blur-md z-40 shadow-sm">
     <div class="container mx-auto px-4 py-3">
         <div class="flex justify-between items-center">
             <a href="#" class="flex items-center group">
-                <img src="assets/logo.png" alt="Federica Nicosia Logo" class="h-12 group-hover:scale-110 transition-transform duration-300">
-                <span class="ml-3 font-serif text-xl font-bold hidden md:block">Federica Nicosia</span>
+                <img src="assets/logo.png" alt="Logo" class="h-12 scale-150 origin-left transition-transform duration-300 group-hover:scale-135">
+
             </a>
             
             <div class="hidden md:flex space-x-2">
                 <a href="#about" class="nav-link">Chi sono</a>
                 <a href="#services" class="nav-link">Pacchetti</a>
                 <a href="#portfolio" class="nav-link">Portfolio</a>
-                <a href="#testimonials" class="nav-link">Recensioni</a>
                 <a href="#contact" class="nav-link bg-primary text-white hover:bg-secondary">Contatti</a>
             </div>
             
@@ -161,7 +162,6 @@
             <a href="#about" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Chi sono</a>
             <a href="#services" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Pacchetti</a>
             <a href="#portfolio" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Portfolio</a>
-            <a href="#testimonials" class="block px-3 py-2 rounded-lg hover:bg-accent font-medium text-sm">Recensioni</a>
             <a href="#contact" class="block px-3 py-2 rounded-lg bg-primary text-white font-medium text-sm">Contatti</a>
         </div>
     </div>
@@ -508,98 +508,85 @@
         </div>
     </section>
 
-    <!-- Process Section -->
     <section class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="section-header">
-                <h2>Il Mio Metodo</h2>
-                <div class="divider"></div>
-                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
-                    Un approccio strutturato per risultati misurabili e duraturi
-                </p>
-            </div>
+    <div class="container mx-auto px-6">
+        <div class="section-header">
+            <h2>Il Mio Metodo</h2>
+            <div class="divider"></div>
+            <p class="text-xl text-center max-w-3xl mx-auto mb-16">
+                Un approccio strutturato per risultati misurabili e duraturi
+            </p>
+        </div>
+        
+        <div class="relative">
+            <!-- Timeline verticale centrale -->
+            <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary -ml-0.5 z-0"></div>
             
-            <div class="relative">
-                <!-- Timeline -->
-                <div class="hidden md:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-primary to-secondary -ml-0.5 z-0"></div>
+            <!-- Steps - versione compatta -->
+            <div class="space-y-16 md:space-y-24 relative z-10 max-w-2xl mx-auto">
+                <!-- Step 1 -->
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold shadow-lg">
+                            1
+                        </div>
+                    </div>
+                    <div class="bg-light p-8 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-2xl font-serif font-bold mb-4">Analisi Strategica</h3>
+                        <p class="text-gray-600">
+                            Studio approfondito del tuo brand, dei competitor e del target per costruire una strategia su misura.
+                        </p>
+                    </div>
+                </div>
                 
-                <!-- Steps -->
-                <div class="space-y-16 md:space-y-24 relative z-10">
-                    <!-- Step 1 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 group">
-                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-1">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
-                                1
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold mb-4">Analisi Strategica</h3>
-                            <p class="text-gray-600">
-                                Studio approfondito del tuo brand, dei competitor e del target per costruire una strategia su misura.
-                            </p>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 order-2 md:order-2">
-                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
-                                <img src="https://via.placeholder.com/500x300?text=Analisi+Strategica" alt="Analisi" class="rounded-lg w-full">
-                            </div>
+                <!-- Step 2 -->
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold shadow-lg">
+                            2
                         </div>
                     </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 group">
-                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-3">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
-                                2
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold mb-4">Pianificazione</h3>
-                            <p class="text-gray-600">
-                                Definizione degli obiettivi, sviluppo del calendario editoriale e scelta dei formati più efficaci.
-                            </p>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 order-2 md:order-4">
-                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
-                                <img src="https://via.placeholder.com/500x300?text=Implementazione" alt="Implementazione" class="rounded-lg w-full">
-                            </div>
+                    <div class="bg-light p-8 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-2xl font-serif font-bold mb-4">Pianificazione</h3>
+                        <p class="text-gray-600">
+                            Definizione degli obiettivi, sviluppo del calendario editoriale e scelta dei formati più efficaci.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold shadow-lg">
+                            3
                         </div>
                     </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 group">
-                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-1">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
-                                3
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold mb-4">Implementazione</h3>
-                            <p class="text-gray-600">
-                                Creazione e pubblicazione di contenuti coerenti con il tuo tono di voce e una visual identity d'impatto.
-                            </p>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 order-2 md:order-2">
-                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
-                                <img src="https://via.placeholder.com/500x300?text=Pianificazione" alt="Pianificazione" class="rounded-lg w-full">
-                            </div>
+                    <div class="bg-light p-8 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-2xl font-serif font-bold mb-4">Implementazione</h3>
+                        <p class="text-gray-600">
+                            Creazione e pubblicazione di contenuti coerenti con il tuo tono di voce e una visual identity d'impatto.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="flex items-start gap-6 group">
+                    <div class="flex-shrink-0 mt-1">
+                        <div class="flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold shadow-lg">
+                            4
                         </div>
                     </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="flex flex-col md:flex-row items-center gap-8 group">
-                        <div class="md:w-1/2 md:pr-16 md:text-right order-1 md:order-3">
-                            <div class="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full text-white text-2xl font-bold mb-4 shadow-lg">
-                                4
-                            </div>
-                            <h3 class="text-2xl font-serif font-bold mb-4">Ottimizzazione</h3>
-                            <p class="text-gray-600">
-                                Monitoraggio continuo, analisi dei dati e miglioramenti costanti per massimizzare i risulti.
-                            </p>
-                        </div>
-                        <div class="md:w-1/2 md:pl-16 order-2 md:order-4">
-                            <div class="bg-light p-6 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-shadow">
-                                <img src="https://via.placeholder.com/500x300?text=Ottimizzazione" alt="Ottimizzazione" class="rounded-lg w-full">
-                            </div>
-                        </div>
+                    <div class="bg-light p-8 rounded-2xl border-2 border-primary/20 shadow-md group-hover:shadow-lg transition-all duration-300">
+                        <h3 class="text-2xl font-serif font-bold mb-4">Ottimizzazione</h3>
+                        <p class="text-gray-600">
+                            Monitoraggio continuo, analisi dei dati e miglioramenti costanti per massimizzare i risultati.
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Portfolio Section -->
     <section id="portfolio" class="py-24 bg-light">
@@ -615,7 +602,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Project 1 -->
                 <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://via.placeholder.com/600x800?text=Beauty+Salon" alt="Project 1" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="assets/Gestione social.png" alt="Project 1" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                         <h3 class="text-2xl font-serif font-bold text-white mb-2">Glamour Hair Studio</h3>
                         <p class="text-white/80 mb-4">+120% clienti in 6 mesi</p>
@@ -628,9 +615,8 @@
                 
                 <!-- Project 2 -->
                 <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://via.placeholder.com/600x800?text=Skin+Clinic" alt="Project 2" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
-                        <h3 class="text-2xl font-serif font-bold text-white mb-2">Pure Skin Clinic</h3>
+                    <img src="assets/Presentazione.png" alt="Project 1" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">             <h3 class="text-2xl font-serif font-bold text-white mb-2">Pure Skin Clinic</h3>
                         <p class="text-white/80 mb-4">+300% engagement in 3 mesi</p>
                         <div class="flex flex-wrap gap-2">
                             <span class="bg-primary/20 text-white px-3 py-1 rounded-full text-sm">Instagram</span>
@@ -642,7 +628,7 @@
                 
                 <!-- Project 3 -->
                 <div class="portfolio-item group relative overflow-hidden rounded-2xl shadow-lg">
-                    <img src="https://via.placeholder.com/600x800?text=Nail+Design" alt="Project 3" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <img src="assets/Branding.png" alt="Project 3" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
                     <div class="absolute inset-0 bg-gradient-to-t from-dark/90 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
                         <h3 class="text-2xl font-serif font-bold text-white mb-2">Luxe Nails</h3>
                         <p class="text-white/80 mb-4">Prenotazioni al 100% capacity</p>
@@ -663,100 +649,6 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="py-24 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="section-header">
-                <h2>Cosa Dicono di Me</h2>
-                <div class="divider"></div>
-                <p class="text-xl text-center max-w-3xl mx-auto mb-16">
-                    Le esperienze dei professionisti beauty che hanno scelto la mia consulenza
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-primary">
-                    <div class="flex items-center mb-6">
-                        <img src="https://via.placeholder.com/80?text=CM" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-primary">
-                        <div class="ml-4">
-                            <h4 class="font-bold text-lg">Chiara Monti</h4>
-                            <p class="text-gray-600">Proprietaria - Hair Boutique</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-700 mb-6">
-                        <i class="fas fa-quote-left text-primary/30 text-2xl float-left mr-2"></i>
-                        Federica ha trasformato il nostro Instagram da pagina amatoriale a vero biglietto da visita. In 4 mesi abbiamo raddoppiato le prenotazioni online!
-                    </div>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 2 -->
-                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-secondary">
-                    <div class="flex items-center mb-6">
-                        <img src="https://via.placeholder.com/80?text=MB" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-secondary">
-                        <div class="ml-4">
-                            <h4 class="font-bold text-lg">Marco Bianchi</h4>
-                            <p class="text-gray-600">Barbiere - The Gentleman's Cut</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-700 mb-6">
-                        <i class="fas fa-quote-left text-secondary/30 text-2xl float-left mr-2"></i>
-                        Lavorare con Federica è stato illuminante. Ha capito subito il nostro target e creato contenuti che parlano direttamente ai nostri clienti ideali.
-                    </div>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                    </div>
-                </div>
-                
-                <!-- Testimonial 3 -->
-                <div class="bg-light p-8 rounded-2xl shadow-md border-t-4 border-success">
-                    <div class="flex items-center mb-6">
-                        <img src="https://via.placeholder.com/80?text=SR" alt="Client" class="w-16 h-16 rounded-full object-cover border-2 border-success">
-                        <div class="ml-4">
-                            <h4 class="font-bold text-lg">Sara Ricci</h4>
-                            <p class="text-gray-600">Estetista - Glow Skin Care</p>
-                        </div>
-                    </div>
-                    <div class="text-gray-700 mb-6">
-                        <i class="fas fa-quote-left text-success/30 text-2xl float-left mr-2"></i>
-                        Finalmente qualcuno che conosce davvero il mondo beauty! I suoi reel hanno portato tantissime nuove clienti nel mio centro.
-                    </div>
-                    <div class="flex text-yellow-400">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star-half-alt"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary to-secondary text-white">
-        <div class="container mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-serif font-bold mb-8">Pronto a trasformare la tua presenza digitale?</h2>
-            <p class="text-xl mb-12 max-w-3xl mx-auto">
-                Prenota una consulenza gratuita per analizzare la tua situazione attuale e scoprire come posso aiutarti
-            </p>
-            <a href="#contact" class="btn btn-secondary inline-flex items-center">
-                <span class="mr-2">Prenota ora</span>
-                <i class="fas fa-calendar-check"></i>
-            </a>
-        </div>
-    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-24 bg-white">
@@ -779,7 +671,7 @@
                     <p class="text-gray-600 mb-8 max-w-md">
                         Clicca il pulsante qui sotto per inviarmi direttamente un'email dal tuo client di posta preferito.
                     </p>
-                    <a href="mailto:federica@example.com" class="btn btn-primary px-8 py-4 text-lg hover:scale-105 transform transition-all duration-300">
+                    <a href="mailto:federicanicosia.smm@gmail.com" class="btn btn-primary px-8 py-4 text-lg hover:scale-105 transform transition-all duration-300">
                         <span class="mr-3">Invia Email</span>
                         <i class="fas fa-paper-plane"></i>
                     </a>
@@ -805,7 +697,7 @@
                     </div>
                     <div>
                         <h3 class="text-xl font-serif font-bold mb-1">Instagram</h3>
-                        <a href="https://instagram.com/federicanicosia_smm" target="_blank" class="text-primary hover:text-secondary transition-colors">
+                        <a href="https://www.instagram.com/federica.nicosia/" target="_blank" class="text-primary hover:text-secondary transition-colors">
                             @federicanicosia_smm
                         </a>
                     </div>
@@ -821,8 +713,7 @@
             <div class="flex flex-col md:flex-row justify-between items-center mb-12">
                 <div class="mb-8 md:mb-0">
                     <a href="#" class="flex items-center">
-                        <img src="assets/logo_1.png" alt="Federica Nicosia Logo" class="h-12">
-                        <span class="ml-3 font-serif text-xl font-bold">Federica Nicosia</span>
+                        <span class="font-serif text-xl font-bold">Federica Nicosia</span>
                     </a>
                     <p class="mt-4 text-gray-400 max-w-md">
                         Social Media Manager specializzata nel settore beauty. Trasformo la tua presenza digitale in un'opportunità di business.
@@ -874,10 +765,10 @@
         </div>
     </footer>
 
-    <!-- Back to top button -->
-    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-30">
-        <i class="fas fa-arrow-up"></i>
-    </a>
+   <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg opacity-0 invisible transition-all duration-300 z-30">
+    <i class="fas fa-arrow-up"></i>
+</a>
+
 
     <script src="script.js"></script>
 </body>
