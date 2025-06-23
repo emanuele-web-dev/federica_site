@@ -1,6 +1,1 @@
-https://commerce.adobe.com/store/payment?
-items%5B0%5D%5Bid%5D=A9BF1E083874F26DD3C707BD1B53CF45&rrItems
-%5B0%5D%5Bid
-%
-5D=A9BF1E083874F26DD3C707BD1B53CF45&co=
-IT&lang=it&cli=mini_plans&ss=recommendationZ
+
